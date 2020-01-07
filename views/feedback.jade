@@ -1,0 +1,86 @@
+doctype html
+html
+  head
+    style.
+      body {font-family: Arial, Helvetica, sans-serif;}
+      * {box-sizing: border-box}
+      /* Full-width input fields */
+      input[type=text], input[type=password] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+      }
+      input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+      }
+      hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+      }
+      /* Set a style for all buttons */
+      button {
+      background-color: rgb(35, 160, 172);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+      }
+      button:hover {
+      opacity:1;
+      }
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+      padding: 14px 20px;
+      background-color: #f44336;
+      }
+      /* Float cancel and signup buttons and add an equal width */
+      .cancelbtn, .signupbtn {
+      float: left;
+      width: 50%;
+      }
+      /* Add padding to container elements */
+      .container {
+      padding: 16px;
+      width:400px;
+      margin: auto;
+      }
+      /* Clear floats */
+      .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+      }
+      /* Change styles for cancel button and signup button on extra small screens */
+      @media screen and (max-width: 300px) {
+      .cancelbtn, .signupbtn {
+      width: 100%;
+      }
+      }
+  body
+    form(action='/feedback', method='POST')
+      .container
+        h1 Feedback
+        p Your Feedback Means a Lot :        hr
+        label(for='email')
+          b Enter Your Email?
+        input(type='email', placeholder='email', name='email', required='')
+        label(for='product')
+          b What product did you purchase?
+        input(type='text', placeholder='Product Name', name='productName', required='')
+        label(for='rating')
+          b Product rating:
+        input(type='number', min='1', max='5', placeholder='Rating', name='rating', style='width: 60px;', required='')
+        br
+        br
+        label(for='suggestions')
+          b Suggestions
+        input(type='text', min='1', max='5', placeholder='Your Rating', name='suggestions', required='')
+        .clearfix
+          button.signupbtn(type='submit') Submit
